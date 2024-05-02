@@ -1,0 +1,18 @@
+.svg {
+  width: 100%;
+  transition: 0.4s;
+  fill: #b8e1e9;
+  filter: drop-shadow(-16px 12px 1px #000000b3);
+}
+.svg_container {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.svg:hover {
+  scale: 1.2;
+}

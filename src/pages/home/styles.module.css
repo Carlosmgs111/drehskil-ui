@@ -1,0 +1,7 @@
+.page {
+  padding-top: 4rem;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+}

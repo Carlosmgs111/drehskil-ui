@@ -15,7 +15,7 @@ export const useNearScreen = (
   dependencies: Array<any> = []
 ): [Ref<any>, Boolean] => {
   const { delay, _ref, ...observerOptions } = options;
-  const ref: Ref<any> = _ref || useRef(null);
+  const ref: Ref<any> = useRef(_ref?.current || null);
   const [show, setShow] = useState(false);
 
   let delayedCbId: any;

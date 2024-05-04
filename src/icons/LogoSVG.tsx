@@ -3,12 +3,11 @@ import { SVGProps } from "react";
 import styles from "./styles.module.css";
 import { SVGContainer } from "./SVGContainer";
 export const LogoSVG = (props: SVGProps<SVGSVGElement>) => (
-  <SVGContainer>
+  <SVGContainer {...props}>
     <svg
       className={styles.svg}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 145.32 115.56"
-      {...props}
     >
       <defs>
         <linearGradient

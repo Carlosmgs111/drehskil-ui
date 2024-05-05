@@ -7,8 +7,7 @@ import { useStateValue } from "@context";
 import { useLocalStorage } from "@hooks/useLocalStorage";
 
 export const MultiSidebar = (props: any) => {
-  const { sidebars = [], children } = props;
-  Children.toArray(children).map((child)=>console.log({child}))
+  const { sidebars = [], children, width } = props;
   const [expand, switchExpand] = useToggle(false, true);
   const [activeSidebars, setActiveSidebars] = useState([sidebars[0]?.props.id]);
   const [settingsDashboard, switchSettingsDashboard] = useToggle(false, true);
@@ -24,7 +23,10 @@ export const MultiSidebar = (props: any) => {
   const main = (
     <div className={styles.container}>
       <div className={`${styles.main} ${float ? styles.floating : ""}`}>
-        <section className={styles.sidebar}>
+        <section
+          style={{ width: width || "fit-content", minWidth: "none" }}
+          className={`${styles.sidebar} ${!width && styles.dinamic}`}
+        >
           {sidebars.length > 1 && (
             <section className={styles.header}>
               {sidebars.map((sidebar: any, index: number) => (
@@ -62,6 +64,12 @@ export const MultiSidebar = (props: any) => {
               injectAttrsToReactElements([sidebar], {
                 active: activeSidebars.includes(sidebar.props.id),
                 key: index,
+                width: width
+                  ? `${
+                      Number(width.replace("px", "") / activeSidebars.length) -
+                      16
+                    }px`
+                  : "none",
               })
             )}
           </section>
@@ -86,7 +94,6 @@ export const MultiSidebar = (props: any) => {
       </div>
     </div>
   );
-  
 
   return children ? (
     <div className={styles.wrapper}>

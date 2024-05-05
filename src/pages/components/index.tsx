@@ -2,13 +2,20 @@ import Head from "next/head";
 import styles from "./styles.module.css";
 import { useStateValue } from "@/context";
 import { MultiSidebar } from "@/components/Sidebars/MultiSidebar";
-import { PanelSidebar } from "@/components/Sidebars/PanelSidebar";
+import { PanelSidebar, innerItems } from "@/components/Sidebars/PanelSidebar";
 import { useTrackSidebar } from "@/hooks/useTrackSidebar";
 import { LogoSVG } from "@/icons/LogoSVG";
 
 export default function Components() {
   const [{}]: any = useStateValue();
   const { TrackSidebar, ContentWrapper } = useTrackSidebar();
+  const panelSidebarItems: any = [
+    {
+      innerItem: innerItems.InnerItem,
+      className: "fa-solid fa-plus",
+      content: "Agregar Proyecto",
+    },
+  ];
 
   return (
     <div className={styles.page}>
@@ -16,7 +23,19 @@ export default function Components() {
         <title>Components</title>
       </Head>
       <main>
-        <MultiSidebar sidebars={[<TrackSidebar key={0} />]}>
+        <MultiSidebar
+          width={"240px"}
+          sidebars={[
+            <TrackSidebar id={"tracksidebar"} key={0} />,
+            <PanelSidebar
+              id={"panelsidebar"}
+              key={1}
+              {...{
+                items: panelSidebarItems,
+              }}
+            />,
+          ]}
+        >
           <div className={styles.content}>
             <ContentWrapper>
               <div id={"hola"}>

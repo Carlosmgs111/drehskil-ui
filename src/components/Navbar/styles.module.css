@@ -80,12 +80,11 @@
   align-items: center;
   z-index: 1000;
   border-radius: 0.2rem;
-  transition: 0.4s;
+  transition: scale 0.4s, color 0.2s;
 }
 
 .link.current {
   color: var(--main-color-950);
-  transition: 0.2s;
 }
 
 .link > span {

@@ -23,7 +23,6 @@
   backdrop-filter: blur(6px);
   border: solid transparent 2px;
   max-height: 70vh;
-  min-width: fit-content;
   padding: 0.8rem;
   display: flex;
   flex-direction: column;
@@ -34,6 +33,11 @@
   z-index: 100;
   transition: border 0.4s;
   position: relative;
+  width: fit-content;
+  overflow: hidden;
+}
+.dinamic {
+  min-width: fit-content;
 }
 .sidebar:hover {
   border: solid var(--main-color-400) 2px;

@@ -10,8 +10,9 @@ export function TrackSidebar(props: any) {
     innerItems = true,
     direction = "column",
     active = true,
+    width,
   }: any = props;
-  const [{ token, loading: globalLoading }, dispatch]:any = useStateValue();
+  const [{ token, loading: globalLoading }, dispatch]: any = useStateValue();
 
   const [expand, switchExpand] = useToggle(false, true);
 
@@ -44,7 +45,7 @@ export function TrackSidebar(props: any) {
     <section
       {...{
         ...props,
-        style: { flexDirection: direction },
+        style: { flexDirection: direction, width: width || "available" },
         className: styles.body.concat(" ", active && styles.active),
       }}
     >

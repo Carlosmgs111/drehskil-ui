@@ -3,6 +3,10 @@ import styles from "./styles.module.css";
 export const Hero = () => {
   return (
     <section className={styles.container}>
+      <h1>Drehskil UI</h1>
+      <h3>
+        Is a collection of highly customized components made with React.
+      </h3>
       <p>
         Discover an exclusive catalog of highly customized components in React,
         carefully designed to offer unique functionalities. These components,

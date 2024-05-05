@@ -1,5 +1,17 @@
 .container {
   max-width: 90rem;
-  display: flex;
   justify-content: center;
+  flex-direction: column;
+  font-size: 2.4rem;
+  text-wrap: justify;
+}
+
+.container h1 {
+  text-align: center;
+  font-family: var(--title-font);
+  font-size: var(--title-font-size);
+}
+
+.container h3{
+  font-family: var(--title-font);
 }

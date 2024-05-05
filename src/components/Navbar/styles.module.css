@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: var(--moonlit-asteroid-900);
+  backdrop-filter: blur(10rem) brightness(80%);
 }
 
 .navbar_section {
@@ -19,10 +19,6 @@
   overflow: scroll;
   scroll-snap-type: x mandatory;
   display: flex;
-}
-
-.logo_container {
-  /* padding: 0 4rem; */
 }
 
 .logo_container > div > svg {
@@ -96,33 +92,14 @@
   transition: 0.4s;
 }
 
-.link.secret {
-  position: absolute;
-  text-align: center;
-  padding: 0.8rem 0.8rem 0.8rem 0;
-  width: 2rem;
-  height: 2rem;
-  border: solid 0.1rem transparent;
-  right: -6rem;
-}
-
-.link.secret:hover {
-  border: solid 0.1rem #000000;
-}
-
-.link.secret.logged {
-  background-color: #fb2601;
-}
-
-.link.secret.unlogged {
-  background-color: #adff2f;
-}
-
 @media screen and (min-width: 800px) {
   .navbar {
     width: fit-content;
   }
   .link:hover {
-    scale: 1.25;
+    scale: 1.15;
+  }
+  .link.current:hover {
+    scale: 1;
   }
 }

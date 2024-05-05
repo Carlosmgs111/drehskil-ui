@@ -1,49 +1,59 @@
-import { useState, useEffect, useRef, Ref } from "react";
+import { useState, useEffect, useRef } from "react";
 
-type options = {
-  threshold?: number;
-  delay?: number;
-  _ref?: undefined | { current: any };
-};
+// typeof window.IntersectionObserver !== "undefined"
+//   ? window.IntersectionObserver
+//   : import("intersection-observer");
 
 export const useNearScreen = (
-  cb: Function = () => {},
-  options: options = {
-    threshold: 0.25,
-    delay: 0,
-  },
-  dependencies: Array<any> = []
-): [Ref<any>, Boolean] => {
-  const { delay, _ref, ...observerOptions } = options;
-  const ref: Ref<any> = useRef(_ref?.current || null);
-  const [show, setShow] = useState(false);
-
-  let delayedCbId: any;
-
+  initialState: any = null,
+  cb: Function | null = null
+) => {
+  const ref: any = useRef(null);
+  const [show, setShow] = useState(initialState);
   useEffect(() => {
-    let whenGone: any;
-    var observer: IntersectionObserver;
-    observer = new IntersectionObserver((entries) => {
-      const currentEntry = entries[0];
-      const { isIntersecting } = currentEntry;
-      if (isIntersecting) {
-        setShow(true);
-      } else {
-        setShow(false);
-      }
-    }, observerOptions);
-
-    delayedCbId = setTimeout(() => {
-      whenGone = cb(ref.current, show);
-    }, delay);
-
-    if (ref.current instanceof Element) observer.observe(ref.current);
-    return () => {
-      clearTimeout(delayedCbId);
-      observer?.disconnect();
-      whenGone && whenGone();
+    var observer: any;
+    const setObserver = (current: any) => {
+      observer = new window.IntersectionObserver(
+        (entries) => {
+          const { isIntersecting }: any = entries[0];
+          setShow(isIntersecting);
+          if (cb) cb(current.id, isIntersecting);
+        },
+        { threshold: 0.5 }
+      );
+      if (current instanceof Element) observer.observe(current);
     };
-  }, [ref.current, show, ...dependencies]);
+    setObserver(ref.current);
+    return () => observer?.disconnect();
+  }, [ref]);
+  return [show, ref];
+};
 
-  return [ref, show];
+export const useNearScreenArray = (
+  initialState: any = null,
+  cb: Function | null = null
+) => {
+  const refs: any = useRef(initialState.map(() => ({ current: null })));
+  const [show, setShow] = useState(initialState);
+  useEffect(() => {
+    var observers: any = [];
+    const setObserver = (current: any, index: any) => {
+      observers[index] = new window.IntersectionObserver(
+        (entries) => {
+          const { isIntersecting }: any = entries[0];
+          show.splice(index, 1, isIntersecting);
+          setShow([...show]);
+          if (cb) cb(current.id, isIntersecting);
+        },
+        { threshold: 0.5 }
+      );
+      if (current instanceof Element) observers[index].observe(current);
+    };
+    refs.current.forEach((ref: any, index: any) => {
+      setObserver(ref.current, index);
+    });
+    return () => observers.forEach((observer: any) => observer?.disconnect());
+  }, [refs]);
+
+  return [show, refs];
 };

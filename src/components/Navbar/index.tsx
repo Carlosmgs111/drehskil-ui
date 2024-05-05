@@ -22,14 +22,17 @@ export function Navbar({ references }: any): any {
         ></Linkdex>
       );
     });
+    
   useEffect(() => {
     if (!referencesRefs.current[pathName.replace("/", "")]) {
       indicatorRef.current.style.scale = "0";
+      indicatorRef.current.style.opacity = "0";
       return;
     }
     const { offsetLeft, offsetWidth } =
       referencesRefs.current[pathName.replace("/", "")].current;
     indicatorRef.current.style.scale = "1";
+    indicatorRef.current.style.opacity = "1";
     indicatorRef.current.style.left = `${offsetLeft}px`;
     indicatorRef.current.style.width = `${offsetWidth}px`;
   }, [pathName]);

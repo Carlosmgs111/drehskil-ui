@@ -12,8 +12,22 @@
 }
 
 .content {
+  padding: 16rem 0;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 4rem;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   width: 100%;
+}
+
+.component_presentation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60rem;
+  height: 45rem;
+  border-radius: 2rem;
+  backdrop-filter: blur(2px) brightness(70%);
 }

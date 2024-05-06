@@ -10,12 +10,15 @@ export function TrackSidebar(props: any) {
     innerItems = true,
     direction = "column",
     active = true,
+    expanded = false,
+    showButton = true,
     width,
   }: any = props;
   const [{ token, loading: globalLoading }, dispatch]: any = useStateValue();
-
-  const [expand, switchExpand] = useToggle(false, true);
-
+  const [expand, switchExpand] = useToggle(
+    showButton ? expanded : true,
+    !expanded
+  );
   const indexesList: any = [];
   items.map((name: any, index: number) => {
     const active = refs.includes(labelCases(name).LS);
@@ -49,7 +52,7 @@ export function TrackSidebar(props: any) {
         className: styles.body.concat(" ", active && styles.active),
       }}
     >
-      {innerItems && (
+      {innerItems && showButton && (
         <i
           key="0"
           className={`fa-solid ${

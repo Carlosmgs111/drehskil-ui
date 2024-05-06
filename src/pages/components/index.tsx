@@ -5,6 +5,7 @@ import { MultiSidebar } from "@/components/Sidebars/MultiSidebar";
 import { PanelSidebar, innerItems } from "@/components/Sidebars/PanelSidebar";
 import { useTrackSidebar } from "@/hooks/useTrackSidebar";
 import { LogoSVG } from "@/icons/LogoSVG";
+import { DrehskilUILogoSVG } from "@/icons/DrehskilUILogoSVG";
 
 export default function Components() {
   const [{}]: any = useStateValue();
@@ -25,8 +26,9 @@ export default function Components() {
       <main>
         <MultiSidebar
           width={"240px"}
+          float={false}
           sidebars={[
-            <TrackSidebar id={"tracksidebar"} key={0} />,
+            <TrackSidebar showButton={false} id={"tracksidebar"} key={0} />,
             <PanelSidebar
               id={"panelsidebar"}
               key={1}
@@ -38,9 +40,15 @@ export default function Components() {
         >
           <div className={styles.content}>
             <ContentWrapper>
-              <div id={"hola"}>
-                <LogoSVG />
-              </div>
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i: any) => (
+                <div
+                  key={i}
+                  className={styles.component_presentation}
+                  id={"hola" + i}
+                >
+                  <DrehskilUILogoSVG />
+                </div>
+              ))}
             </ContentWrapper>
           </div>
         </MultiSidebar>

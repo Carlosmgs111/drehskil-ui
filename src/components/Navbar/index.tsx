@@ -3,7 +3,7 @@ import { Mapfy } from "@utils";
 import { Linkdex } from "./Linkdex";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { LogoSVG } from "@/icons/LogoSVG";
+import { DrehskilUILogoSVG } from "@/icons/DrehskilUILogoSVG";
 
 export function Navbar({ references }: any): any {
   const indicatorRef: any = useRef(null);
@@ -41,7 +41,7 @@ export function Navbar({ references }: any): any {
     <div className={styles.sticky_container}>
       <section className={styles.navbar_section}>
         <Linkdex className={styles.logo_container} to={"/"}>
-          <LogoSVG {...{ width: "4rem", height: "4rem" }} />
+          <DrehskilUILogoSVG {...{ width: "4rem", height: "4rem" }} />
         </Linkdex>
         <div className={styles.navbar_container}>
           <nav id="navbar" className={styles.navbar}>

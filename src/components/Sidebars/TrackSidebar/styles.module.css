@@ -9,7 +9,7 @@
   direction: rtl;
   transition: max-height 0.4s, max-width 0.4s, width 0.4s, scale 0.4s,
     opacity 0.2s transfrom 0.4s;
-  box-shadow: inset 0px 0px 4px 2px #00000033;
+  /* box-shadow: inset 0px 0px 4px 2px #00000033; */
   max-height: 0;
   max-width: 0;
   scale: 0;
@@ -37,11 +37,11 @@
   cursor: hand;
   text-decoration: none !important;
   display: flex;
-  padding: 0.6rem;
+  padding: 0.8rem 0.6rem;
   align-items: center;
   position: relative;
   direction: ltr;
-  color: var(--main-color-800) !important;
+  color: var(--main-color-700) !important;
   transition: max-width 0.6s, max-height 0.4s, margin-right 0.4s, color 0.4s,
     opacity 0.6s, scale 0.6s;
 }
@@ -57,7 +57,7 @@
   color: var(--main-color-100) !important;
 }
 .item.active {
-  color: var(--main-color-400) !important;
+  color: var(--main-color-300) !important;
 }
 .inner {
   cursor: hand;

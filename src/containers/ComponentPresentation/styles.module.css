@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60rem;
+  height: 45rem;
+  border-radius: 2rem;
+  backdrop-filter: blur(2px) brightness(70%);
+  scroll-snap-align: center;
+  padding: 2rem;
+}
+
+.container > video {
+  border-radius: 2rem;
+}

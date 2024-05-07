@@ -4,8 +4,7 @@ import { useStateValue } from "@/context";
 import { MultiSidebar } from "@/components/Sidebars/MultiSidebar";
 import { PanelSidebar, innerItems } from "@/components/Sidebars/PanelSidebar";
 import { useTrackSidebar } from "@/hooks/useTrackSidebar";
-import { LogoSVG } from "@/icons/LogoSVG";
-import { DrehskilUILogoSVG } from "@/icons/DrehskilUILogoSVG";
+import { ComponentPresentation } from "@/containers/ComponentPresentation";
 
 export default function Components() {
   const [{}]: any = useStateValue();
@@ -41,14 +40,17 @@ export default function Components() {
         >
           <div className={styles.content}>
             <ContentWrapper>
+              <ComponentPresentation
+                id={"first"}
+                {...{ video: "videos/track-sidebar-demo.mp4" }}
+              />
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((i: any) => (
-                <div
+                <ComponentPresentation
                   key={i}
-                  className={styles.component_presentation}
-                  id={"Drehskil UI component # " + i}
-                >
-                  <DrehskilUILogoSVG />
-                </div>
+                  {...{
+                    id: "Drehskil UI component # " + i,
+                  }}
+                />
               ))}
             </ContentWrapper>
           </div>

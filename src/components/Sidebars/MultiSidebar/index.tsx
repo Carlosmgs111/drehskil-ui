@@ -78,11 +78,9 @@ export const MultiSidebar = (props: any) => {
                   active: activeSidebars.includes(sidebar.props.id),
                   key: index,
                   width: width
-                    ? `${
-                        Number(
-                          width.replace("px", "") / activeSidebars.length
-                        ) - 16
-                      }px`
+                    ? `${Number(
+                        width.replace("px", "") / activeSidebars.length
+                      )}px`
                     : "none",
                 })
               )}

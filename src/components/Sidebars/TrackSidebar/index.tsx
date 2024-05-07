@@ -10,7 +10,7 @@ export function TrackSidebar(props: any) {
     innerItems = true,
     direction = "column",
     active = true,
-    expanded = false,
+    expanded = !false,
     showButton = true,
     width,
   }: any = props;
@@ -24,13 +24,18 @@ export function TrackSidebar(props: any) {
     const active = refs.includes(labelCases(name).LS);
     indexesList.push(
       <a
+        className={`
+      ${styles.item} 
+      ${active ? styles.active : ""}`}
         key={index}
         href={`#${labelCases(name).LS}`}
-        className={`
-        fa-solid fa-circle-dot 
-        ${styles.item} 
-        ${active ? styles.active : ""}`}
       >
+        <i
+          className={`
+        fa-solid fa-circle-dot 
+        ${styles.icon} ${expand && styles.hidden}
+        ${active ? styles.active : ""}`}
+        ></i>
         {innerItems && (
           <i
             {...{

@@ -21,12 +21,13 @@ export default function Components() {
   return (
     <div className={styles.page}>
       <Head>
-        <title>Components</title>
+        <title>Components | Drehskil UI</title>
       </Head>
       <main>
         <MultiSidebar
           width={"240px"}
           float={false}
+          multi={false}
           sidebars={[
             <TrackSidebar showButton={false} id={"tracksidebar"} key={0} />,
             <PanelSidebar
@@ -40,11 +41,11 @@ export default function Components() {
         >
           <div className={styles.content}>
             <ContentWrapper>
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i: any) => (
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((i: any) => (
                 <div
                   key={i}
                   className={styles.component_presentation}
-                  id={"hola" + i}
+                  id={"Drehskil UI component # " + i}
                 >
                   <DrehskilUILogoSVG />
                 </div>

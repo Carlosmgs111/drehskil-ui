@@ -8,7 +8,13 @@ import { useLocalStorage } from "@hooks/useLocalStorage";
 import { MemoizedComponent } from "@/components/MemoizedComponent";
 
 export const MultiSidebar = (props: any) => {
-  const { sidebars = [], children, width, float: _float = true } = props;
+  const {
+    sidebars = [],
+    children,
+    width,
+    float: _float = true,
+    multi = true,
+  } = props;
   const [expand, switchExpand] = useToggle(false, true);
   const [activeSidebars, setActiveSidebars] = useState([sidebars[0]?.props.id]);
   const [settingsDashboard, switchSettingsDashboard] = useToggle(false, true);
@@ -42,14 +48,14 @@ export const MultiSidebar = (props: any) => {
                       activeSidebars.includes(sidebar.props.id)
                         ? styles.active
                         : ""
-                    }`}
+                    } ${styles.button}`}
                     key={index}
                     onClick={() => setActiveSidebars([sidebar.props.id])}
                   >
-                    {index + 1}
+                    {/* {index + 1} */}
                   </i>
                 ))}
-                {activeSidebars.length !== sidebars.length && (
+                {activeSidebars.length !== sidebars.length && multi && (
                   <i
                     key="expand-button"
                     className={`${styles.item} fa-solid fa-ellipsis`}

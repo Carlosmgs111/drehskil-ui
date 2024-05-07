@@ -30,6 +30,7 @@ const Wrapper = ({ children }: any) => {
   const references: any = {
     components: "Components",
     "api-doc": "Api Documentation",
+    about: "About",
   };
 
   return (
@@ -44,7 +45,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <StateProvider {...{ initialState, reducer }}>
       <Head>
-        <title>Drehskil UI</title>
+        <title>Drehskil UI | React Component Catalog</title>
       </Head>
       <Wrapper>
         <Component {...pageProps} />

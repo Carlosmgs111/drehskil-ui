@@ -22,7 +22,7 @@ export function Navbar({ references }: any): any {
         ></Linkdex>
       );
     });
-    
+
   useEffect(() => {
     if (!referencesRefs.current[pathName.replace("/", "")]) {
       indicatorRef.current.style.scale = "0";
@@ -42,6 +42,7 @@ export function Navbar({ references }: any): any {
       <section className={styles.navbar_section}>
         <Linkdex className={styles.logo_container} to={"/"}>
           <DrehskilUILogoSVG {...{ width: "4rem", height: "4rem" }} />
+          &nbsp;<p className={styles.logo_text}>rehskil UI</p>
         </Linkdex>
         <div className={styles.navbar_container}>
           <nav id="navbar" className={styles.navbar}>

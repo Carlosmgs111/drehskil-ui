@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import styles from "./styles.module.css";
 import { DrehskilUILogoSVG } from "@/icons/DrehskilUILogoSVG";
+import NextLink from "next/link";
 export const ComponentPresentation = ({
   title,
   summary,
@@ -22,7 +23,7 @@ export const ComponentPresentation = ({
       ) : (
         <DrehskilUILogoSVG />
       )}
-      <a href={reference}></a>
+      <NextLink href={reference}></NextLink>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { labelCases } from "../../../utils";
 import { useToggle } from "../../../hooks/useToggle";
 import { useStateValue } from "@context";
 import styles from "./styles.module.css";
+import NextLink from "next/link";
 
 export function TrackSidebar(props: any) {
   const {
@@ -24,7 +25,7 @@ export function TrackSidebar(props: any) {
   items.map((name: any, index: number) => {
     const active = refs.includes(labelCases(name).LS);
     indexesList.push(
-      <a
+      <NextLink
         className={`
       ${styles.item} 
       ${active ? styles.active : ""}`}
@@ -46,7 +47,7 @@ export function TrackSidebar(props: any) {
             {labelCases(name).CS}
           </i>
         )}
-      </a>
+      </NextLink>
     );
   });
 

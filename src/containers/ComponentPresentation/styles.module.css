@@ -3,13 +3,44 @@
   justify-content: center;
   align-items: center;
   width: 60rem;
-  height: 45rem;
+  height: fit-content;
   border-radius: 2rem;
   backdrop-filter: blur(2px) brightness(70%);
   scroll-snap-align: center;
-  padding: 2rem;
+  padding: 2.2rem;
+  color: white;
+  position: relative;
+  border: solid transparent 1px;
+  transition: 0.4s;
 }
-
-.container > video {
+.container:hover {
+  border: solid var(--main-color-500) 1px;
+}
+.container a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-direction: column;
+  align-items: center;
+}
+.content > video {
   border-radius: 2rem;
+  position: relative;
+  border: none;
+  width: 100%;
+}
+.content h3 {
+  margin: 0;
+  text-align: center;
+  font-family: var(--title-font);
+  font-size: 2.8rem;
+}
+.content p {
+  font-size: 1.4rem;
+  font-family: "Rubik";
 }

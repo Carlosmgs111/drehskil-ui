@@ -4,21 +4,25 @@ import { DrehskilUILogoSVG } from "@/icons/DrehskilUILogoSVG";
 export const ComponentPresentation = ({
   title,
   summary,
-  video,
-  to,
-  children,
+  video_demo_url,
+  reference,
 }: any) => {
   const videoRef = useRef(null);
   useEffect(() => {}, []);
   return (
     <div className={styles.container}>
-      {video ? (
-        <video ref={videoRef} width="100%" autoPlay muted loop>
-          <source src="videos/track-sidebar-demo.mp4" type="video/mp4" />
-        </video>
+      {video_demo_url ? (
+        <div className={styles.content}>
+          <h3>{title}</h3>
+          <video ref={videoRef} autoPlay muted loop>
+            <source src={video_demo_url} type="video/mp4" />
+          </video>
+          <p>{summary}</p>
+        </div>
       ) : (
         <DrehskilUILogoSVG />
       )}
+      <a href={reference}></a>
     </div>
   );
 };

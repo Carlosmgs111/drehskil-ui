@@ -5,9 +5,11 @@ import { MultiSidebar } from "@/components/Sidebars/MultiSidebar";
 import { PanelSidebar, innerItems } from "@/components/Sidebars/PanelSidebar";
 import { useTrackSidebar } from "@/hooks/useTrackSidebar";
 import { ComponentPresentation } from "@/containers/ComponentPresentation";
+import componentsCatalog from "../../db/components-catalog.json";
 
 export default function Components() {
   const [{}]: any = useStateValue();
+  const { components } = componentsCatalog;
   const { TrackSidebar, ContentWrapper } = useTrackSidebar();
   const panelSidebarItems: any = [
     {
@@ -40,16 +42,10 @@ export default function Components() {
         >
           <div className={styles.content}>
             <ContentWrapper>
-              <ComponentPresentation
-                id={"first"}
-                {...{ video: "videos/track-sidebar-demo.mp4" }}
-              />
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((i: any) => (
+              {components.map((component, index) => (
                 <ComponentPresentation
-                  key={i}
-                  {...{
-                    id: "Drehskil UI component # " + i,
-                  }}
+                  key={index}
+                  {...{ ...component, id: component.title }}
                 />
               ))}
             </ContentWrapper>

@@ -1,5 +1,6 @@
 import { AppProps } from "next/app";
 import { Navbar } from "@components/Navbar";
+import { Footer } from "@/components/Footer";
 import { setActions } from "@utils";
 import { StateProvider, useStateValue } from "@context";
 import Head from "next/head";
@@ -37,6 +38,7 @@ const Wrapper = ({ children }: any) => {
     <>
       <Navbar references={references} />
       {children}
+      <Footer />
     </>
   );
 };

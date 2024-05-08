@@ -1,8 +1,9 @@
 import Head from "next/head";
+import styles from "./styles.module.css";
 
 export default function ApiDocs() {
   return (
-    <div>
+    <div className={styles.page}>
       <Head>
         <title>Api Documents | Drehskil UI</title>
       </Head>

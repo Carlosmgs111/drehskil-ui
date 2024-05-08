@@ -23,7 +23,7 @@ export function TrackSidebar(props: any) {
   );
   const indexesList: any = [];
   items.map((name: any, index: number) => {
-    const href = redirect ? `/${redirect}` : `#${labelCases(name).LS}`;
+    const href = redirect ? `/${redirect}#${labelCases(name).LS}` : `#${labelCases(name).LS}`;
     const active = refs.includes(labelCases(name).LS);
     indexesList.push(
       <NextLink

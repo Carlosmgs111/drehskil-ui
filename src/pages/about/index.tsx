@@ -1,8 +1,9 @@
+import styles from "./styles.module.css";
 import Head from "next/head";
 
 export default function About() {
   return (
-    <div>
+    <div className={styles.page}>
       <Head>
         <title>About | Drehskil UI</title>
       </Head>

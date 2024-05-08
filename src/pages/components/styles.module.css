@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   flex-wrap: wrap;
   scroll-snap-type: mandatory;
+  min-height: 100vh;
 }
 
 .page > main {
@@ -18,7 +19,7 @@
   flex-wrap: wrap;
   gap: 4rem;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 100%;
 }

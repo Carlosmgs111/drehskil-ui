@@ -1,0 +1,30 @@
+{
+  "track-sidebar": {
+    "title": "Track Sidebar",
+    "summary": "Barra de navegacion lateral,que aparte del habitual comportamiento, vincular y navegar hasta los elementos indexados, tambien sigue la navegacion señalando en los indices los elementos que son visibles.",
+    "version": "0.0.1",
+    "reference": "/components/track-sidebar",
+    "video_demo_url": "https://github.com/Carlosmgs111/files/assets/41123597/863842ae-2233-4ac8-94b3-473536c924ba"
+  },
+  "infinite-carousel": {
+    "title": "Infinite Carousel",
+    "summary": "Carrusel de elementos infinito, despliega cualquier elemento que se le provea y los estara mostrando siempre, ya sea de izquierda a derecha o visceversa.",
+    "version": "0.0.1",
+    "reference": "/components/infinite-carousel",
+    "video_demo_url": "https://github.com/Carlosmgs111/files/assets/41123597/e2fa4226-f91e-4dee-a590-c6de8f4b1151"
+  },
+  "omni-modal": {
+    "title": "Omni Modal",
+    "summary": "Modal configurable que permite insertar cualquier elemento que se le sea inyectado mediante el uso de su API.",
+    "version": "0.0.1",
+    "reference": "/components/omni-modal",
+    "video_demo_url": "https://github.com/Carlosmgs111/assets-public/assets/41123597/2dc0cd47-baa9-4fbf-83a0-09399fec7a4c"
+  },
+  "typing-simulator": {
+    "title": "Typing Simulator",
+    "summary": "Simula la escritura de las diferentes palabras que se le provea, ademas de otorgarle estilos a las mismas y controlar la velocidad de escritura.",
+    "version": "0.0.1",
+    "reference": "/components/typing-simulator",
+    "video_demo_url": "https://github.com/Carlosmgs111/assets-public/assets/41123597/970d1d4c-f974-4ca6-8397-4cfa9762fc0d"
+  }
+}

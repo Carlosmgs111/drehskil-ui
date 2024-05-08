@@ -1,0 +1,33 @@
+.page {
+  justify-content: center;
+  text-align: center;
+  padding: 4rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  color: white;
+}
+.page h1 {
+  font-family: var(--title-font);
+  font-size: var(--title-font-size);
+}
+.page p {
+  font-size: var(--text-font-size);
+}
+.live_demo {
+  width: 80rem;
+  max-height: 60rem;
+  backdrop-filter: brightness(70%);
+  border-radius: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.live_demo::-webkit-scrollbar {
+  display: none;
+}

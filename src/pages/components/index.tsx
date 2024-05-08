@@ -5,28 +5,37 @@ import { MultiSidebar } from "@/components/Sidebars/MultiSidebar";
 import { PanelSidebar, innerItems } from "@/components/Sidebars/PanelSidebar";
 import { useTrackSidebar } from "@/hooks/useTrackSidebar";
 import { ComponentPresentation } from "@/containers/ComponentPresentation";
-import componentsCatalog from "../../db/components-catalog.json";
-import { useRouter } from "next/router";
+import componentsCatalogES from "../../db/components-catalog-ES.json";
+import { cloneElement } from "react";
+import { labelCases, mapToList } from "@/utils";
 
-export default function Components({ children, redirect = "" }: any) {
-  const router = useRouter();
-  const { component } = router.query;
-  console.log({component})
+export default function Components({
+  children,
+  componentId = "",
+}: any) {
   const [{}]: any = useStateValue();
-  const { components } = componentsCatalog;
   const { TrackSidebar, ContentWrapper } = useTrackSidebar();
   const panelSidebarItems: any = [
     {
       innerItem: innerItems.InnerItem,
-      className: "fa-solid fa-plus",
-      content: "Agregar Proyecto",
+      className: "",
+      content: "🎉",
     },
   ];
+  const components: any = componentsCatalogES;
+
+  const composedTitle = `${
+    componentId &&
+    String(componentId)
+      .split("-")
+      .map((c: any) => labelCases(c).CS)
+      .join(" ") + " | "
+  }Components | Drehskil UI`;
 
   return (
     <div className={styles.page}>
       <Head>
-        <title>Components | Drehskil UI</title>
+        <title>{composedTitle}</title>
       </Head>
       <main>
         <MultiSidebar
@@ -35,7 +44,7 @@ export default function Components({ children, redirect = "" }: any) {
           multi={false}
           sidebars={[
             <TrackSidebar
-              redirect={redirect}
+              redirect={"components"}
               showButton={false}
               id={"tracksidebar"}
               key={0}
@@ -50,9 +59,9 @@ export default function Components({ children, redirect = "" }: any) {
           ]}
         >
           <div className={styles.content}>
-            {children}
+            {children && cloneElement(children, { ...components[componentId] })}
             <ContentWrapper display={!children}>
-              {components.map((component, index) => (
+              {mapToList(components).map((component: any, index: any) => (
                 <ComponentPresentation
                   key={index}
                   {...{ ...component, id: component.title }}

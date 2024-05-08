@@ -1,0 +1,9 @@
+.footer {
+  height: 40rem;
+  width: 100%;
+  background-color: var(--moonlit-asteroid-900);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 8rem;
+}

@@ -10,7 +10,7 @@ export function TrackSidebar(props: any) {
     refs = [],
     innerItems = true,
     direction = "column",
-    active = true,
+    isActive = true,
     expanded = !false,
     showButton = true,
     width,
@@ -23,6 +23,7 @@ export function TrackSidebar(props: any) {
   );
   const indexesList: any = [];
   items.map((name: any, index: number) => {
+    const href = redirect ? `/${redirect}` : `#${labelCases(name).LS}`;
     const active = refs.includes(labelCases(name).LS);
     indexesList.push(
       <NextLink
@@ -30,7 +31,7 @@ export function TrackSidebar(props: any) {
       ${styles.item} 
       ${active ? styles.active : ""}`}
         key={index}
-        href={redirect ? `/${redirect}` : `#${labelCases(name).LS}`}
+        href={href}
       >
         <i
           className={`
@@ -56,7 +57,7 @@ export function TrackSidebar(props: any) {
       {...{
         ...props,
         style: { flexDirection: direction, width: width || "available" },
-        className: styles.body.concat(" ", active && styles.active),
+        className: styles.body.concat(" ", isActive && styles.active),
       }}
     >
       {innerItems && showButton && (

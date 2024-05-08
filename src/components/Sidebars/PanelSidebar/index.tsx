@@ -1,3 +1,4 @@
+
 import { Children, cloneElement } from "react";
 import styles from "./styles.module.css";
 
@@ -24,14 +25,14 @@ export function PanelSidebar(props: any) {
     children = [],
     items = [],
     expanded = false,
-    active = true,
+    isActive = true,
     width,
   } = props;
 
   return (
     <div
       style={{ width: width || "available" }}
-      className={`${styles.body} ${active ? styles.active : ""}`}
+      className={`${styles.body} ${isActive ? styles.active : ""}`}
     >
       {items.map(
         (

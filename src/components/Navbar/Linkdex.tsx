@@ -11,6 +11,7 @@ export const Linkdex = ({
 }: any) => {
   const pathName = usePathname();
   const isCurrent = pathName.split("/")[1] === to;
+  const href = to ? `/${to}` : `/${label}`;
   return (
     <NextLink
       ref={linkRef}
@@ -18,7 +19,7 @@ export const Linkdex = ({
         isCurrent ? styles.current : null
       }`}
       id={`link_${label}`}
-      href={to ? `/${to}` : `/${label}`}
+      href={href}
       key={label}
     >
       {children || <span>{label}</span>}

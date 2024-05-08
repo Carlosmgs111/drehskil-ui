@@ -23,19 +23,24 @@
 
 .logo_container > div > svg {
   filter: drop-shadow(-8px 6px 1px #000000b3);
+  z-index: 1;
+  position: relative;
 }
 
 .logo_text {
+  position: absolute;
+  left: 0;
   font-size: 2.2rem;
   z-index: -1;
   opacity: 0;
-  transform: translate(-10rem, 0);
+  transform: translate(0, 0);
   transition: transform 0.6s ease-in-out, opacity 0.4s ease-in-out;
+  z-index: -100;
 }
 
 .logo_container:hover .logo_text {
   opacity: 1;
-  transform: translate(0, 0);
+  transform: translate(calc(4rem + 2rem + 0.2rem), 0); /* ? calc( width of logo + right lateral padding of logo + space ) */
 }
 
 .navbar_section::-webkit-scrollbar {

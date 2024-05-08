@@ -40,9 +40,9 @@ export function Navbar({ references }: any): any {
   return (
     <div className={styles.sticky_container}>
       <section className={styles.navbar_section}>
-        <Linkdex className={styles.logo_container} to={"/"}>
+        <Linkdex className={styles.logo_container} to={" "}>
           <DrehskilUILogoSVG {...{ width: "4rem", height: "4rem" }} />
-          &nbsp;<p className={styles.logo_text}>rehskil UI</p>
+          <p className={styles.logo_text}>rehskil UI</p>
         </Linkdex>
         <div className={styles.navbar_container}>
           <nav id="navbar" className={styles.navbar}>

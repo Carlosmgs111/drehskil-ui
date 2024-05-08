@@ -6,8 +6,12 @@ import { PanelSidebar, innerItems } from "@/components/Sidebars/PanelSidebar";
 import { useTrackSidebar } from "@/hooks/useTrackSidebar";
 import { ComponentPresentation } from "@/containers/ComponentPresentation";
 import componentsCatalog from "../../db/components-catalog.json";
+import { useRouter } from "next/router";
 
-export default function Components({ children }: any) {
+export default function Components({ children, redirect = "" }: any) {
+  const router = useRouter();
+  const { component } = router.query;
+  console.log({component})
   const [{}]: any = useStateValue();
   const { components } = componentsCatalog;
   const { TrackSidebar, ContentWrapper } = useTrackSidebar();
@@ -31,7 +35,7 @@ export default function Components({ children }: any) {
           multi={false}
           sidebars={[
             <TrackSidebar
-              redirect={children && "components"}
+              redirect={redirect}
               showButton={false}
               id={"tracksidebar"}
               key={0}

@@ -23,7 +23,7 @@ export const useTrackSidebar = () => {
     [indexes]
   );
   const ContentWrapper = useMemo(() => {
-    const useWrapped = ({ children }: any): any => {
+    const useWrapped = ({ children, display }: any): any => {
       const _children = Children.toArray(children);
       const [, _refs] = useNearScreenArray(
         _children.map(() => false),
@@ -36,6 +36,7 @@ export const useTrackSidebar = () => {
       return _children.map((child: any, index: any): any => {
         return (
           <div
+            style={{ display: display ? "inherit" : "none" }}
             key={index}
             ref={_refs.current[index]}
             id={labelCases(child.props.id).LS}

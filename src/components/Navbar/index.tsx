@@ -24,13 +24,13 @@ export function Navbar({ references }: any): any {
     });
 
   useEffect(() => {
-    if (!referencesRefs.current[pathName.replace("/", "")]) {
+    if (!referencesRefs.current[pathName.split("/")[1]]) {
       indicatorRef.current.style.scale = "0";
       indicatorRef.current.style.opacity = "0";
       return;
     }
     const { offsetLeft, offsetWidth } =
-      referencesRefs.current[pathName.replace("/", "")].current;
+      referencesRefs.current[pathName.split("/")[1]].current;
     indicatorRef.current.style.scale = "1";
     indicatorRef.current.style.opacity = "1";
     indicatorRef.current.style.left = `${offsetLeft}px`;

@@ -13,6 +13,7 @@ export function TrackSidebar(props: any) {
     expanded = !false,
     showButton = true,
     width,
+    redirect = "",
   }: any = props;
   const [{ token, loading: globalLoading }, dispatch]: any = useStateValue();
   const [expand, switchExpand] = useToggle(
@@ -28,7 +29,7 @@ export function TrackSidebar(props: any) {
       ${styles.item} 
       ${active ? styles.active : ""}`}
         key={index}
-        href={`#${labelCases(name).LS}`}
+        href={redirect ? `/${redirect}` : `#${labelCases(name).LS}`}
       >
         <i
           className={`

@@ -2,7 +2,7 @@
   "components": [
     {
       "title": "Track Sidebar",
-      "summary": "Barra de navegacion lateral que aparte de integrar el comportamiento habitual de las mismas, vincular y navegar hasta los elementos indexados, tambien sigue la navegacion señalando en los indices los elementos que son visibles.",
+      "summary": "Barra de navegacion lateral,que aparte del habitual comportamiento, vincular y navegar hasta los elementos indexados, tambien sigue la navegacion señalando en los indices los elementos que son visibles.",
       "version": "0.0.1",
       "reference": "/components/track-sidebar",
       "video_demo_url": "https://github.com/Carlosmgs111/files/assets/41123597/863842ae-2233-4ac8-94b3-473536c924ba"

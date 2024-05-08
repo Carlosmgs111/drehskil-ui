@@ -7,7 +7,7 @@ import { useTrackSidebar } from "@/hooks/useTrackSidebar";
 import { ComponentPresentation } from "@/containers/ComponentPresentation";
 import componentsCatalog from "../../db/components-catalog.json";
 
-export default function Components() {
+export default function Components({ children }: any) {
   const [{}]: any = useStateValue();
   const { components } = componentsCatalog;
   const { TrackSidebar, ContentWrapper } = useTrackSidebar();
@@ -30,7 +30,12 @@ export default function Components() {
           float={false}
           multi={false}
           sidebars={[
-            <TrackSidebar showButton={false} id={"tracksidebar"} key={0} />,
+            <TrackSidebar
+              redirect={children && "components"}
+              showButton={false}
+              id={"tracksidebar"}
+              key={0}
+            />,
             <PanelSidebar
               id={"panelsidebar"}
               key={1}
@@ -41,7 +46,8 @@ export default function Components() {
           ]}
         >
           <div className={styles.content}>
-            <ContentWrapper>
+            {children}
+            <ContentWrapper display={!children}>
               {components.map((component, index) => (
                 <ComponentPresentation
                   key={index}

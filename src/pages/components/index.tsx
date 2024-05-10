@@ -8,11 +8,9 @@ import { ComponentPresentation } from "@/containers/ComponentPresentation";
 import componentsCatalogES from "../../db/components-catalog-ES.json";
 import { cloneElement } from "react";
 import { labelCases, mapToList } from "@/utils";
+import { MemoizedComponent } from "@/components/MemoizedComponent";
 
-export default function Components({
-  children,
-  componentId = "",
-}: any) {
+export default function Components({ children, componentId = "" }: any) {
   const [{}]: any = useStateValue();
   const { TrackSidebar, ContentWrapper } = useTrackSidebar();
   const panelSidebarItems: any = [
@@ -62,10 +60,9 @@ export default function Components({
             {children && cloneElement(children, { ...components[componentId] })}
             <ContentWrapper display={!children}>
               {mapToList(components).map((component: any, index: any) => (
-                <ComponentPresentation
-                  key={index}
-                  {...{ ...component, id: component.title }}
-                />
+                <MemoizedComponent deps={[component]} key={index} id={component.title}>
+                  <ComponentPresentation {...{ ...component }} />
+                </MemoizedComponent>
               ))}
             </ContentWrapper>
           </div>

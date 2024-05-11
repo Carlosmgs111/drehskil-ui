@@ -60,7 +60,11 @@ export default function Components({ children, componentId = "" }: any) {
             {children && cloneElement(children, { ...components[componentId] })}
             <ContentWrapper display={!children}>
               {mapToList(components).map((component: any, index: any) => (
-                <MemoizedComponent deps={[component]} key={index} id={component.title}>
+                <MemoizedComponent
+                  deps={[component]}
+                  key={index}
+                  id={component.title}
+                >
                   <ComponentPresentation {...{ ...component }} />
                 </MemoizedComponent>
               ))}

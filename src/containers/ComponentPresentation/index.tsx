@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import styles from "./styles.module.css";
 import { DrehskilUILogoSVG } from "@/icons/DrehskilUILogoSVG";
 import NextLink from "next/link";
-import { MemoizedComponent } from "@/components/MemoizedComponent";
 export const ComponentPresentation = ({
   title,
   summary,

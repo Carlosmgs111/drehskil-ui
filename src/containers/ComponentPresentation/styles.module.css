@@ -6,7 +6,6 @@
   height: fit-content;
   border-radius: 2rem;
   backdrop-filter: blur(2px) brightness(70%);
-  scroll-snap-align: center;
   padding: 2.2rem;
   color: white;
   position: relative;

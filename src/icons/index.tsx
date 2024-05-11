@@ -3,7 +3,7 @@
 // import { SocketioSVG } from "./SocketioSVG";
 // import { ApolloGraphqlSVG } from "./ApolloGraphqlSVG";
 // import { GraphqlSVG } from "./GraphqlSVG";
-// import { TypeScriptSVG } from "./TypeScriptSVG";
+import { TypeScriptSVG } from "./TypeScriptSVG";
 // import { JavaScriptSVG } from "./JavaScriptSVG";
 // import { PythonSVG } from "./PythonSVG";
 // import { NodejsSVG } from "./NodejsSVG";
@@ -43,7 +43,7 @@ export const SVGIndexes: any = {
   // socketio: SocketioSVG,
   // apollographql: ApolloGraphqlSVG,
   // graphql: GraphqlSVG,
-  // typescript: TypeScriptSVG,
+  typescript: TypeScriptSVG,
   // javascript: JavaScriptSVG,
   // python: PythonSVG,
   // nodejs: NodejsSVG,
@@ -78,7 +78,7 @@ export {
   // SocketioSVG,
   // ApolloGraphqlSVG,
   // GraphqlSVG,
-  // TypeScriptSVG,
+  TypeScriptSVG,
   // JavaScriptSVG,
   // PythonSVG,
   // NodejsSVG,

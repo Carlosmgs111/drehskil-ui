@@ -12,19 +12,21 @@
   font-family: var(--title-font);
   font-size: var(--title-font-size);
 }
-.page p {
+.summary {
   font-size: var(--text-font-size);
+  width: 80rem;
+  text-align: left;
 }
 .live_demo {
-  width: 80rem;
-  max-height: 60rem;
+  width: 76rem;
   backdrop-filter: brightness(70%);
-  border-radius: 4rem;
+  border-radius: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  max-height: 60rem;
   overflow-y: scroll;
   overflow-x: hidden;
 }

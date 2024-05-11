@@ -23,7 +23,7 @@ export const useTrackSidebar = () => {
     [indexes]
   );
   const ContentWrapper = useMemo(() => {
-    const useWrapped = ({ children, display }: any): any => {
+    const useWrapped = ({ children, display = true }: any): any => {
       const _children = Children.toArray(children);
       const [, _refs] = useNearScreenArray(
         _children.map(() => false),

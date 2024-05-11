@@ -5,7 +5,7 @@ export const ComponentPage = ({ title, summary, children }: any) => {
     <div className={styles.page}>
       <h1>{title}</h1>
       <div className={styles.live_demo}>{children}</div>
-      <p>{summary}</p>
+      <p className={styles.summary}>{summary}</p>
     </div>
   );
 };

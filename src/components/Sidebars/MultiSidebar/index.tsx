@@ -75,7 +75,7 @@ export const MultiSidebar = (props: any) => {
             >
               {sidebars.map((sidebar: any, index: number) =>
                 injectAttrsToReactElements([sidebar], {
-                  isActive: activeSidebars.includes(sidebar.props.id),
+                  isactive: Number(activeSidebars.includes(sidebar.props.id)),
                   key: index,
                   width: width
                     ? `${Number(

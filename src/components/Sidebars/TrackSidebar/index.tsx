@@ -10,20 +10,22 @@ export function TrackSidebar(props: any) {
     refs = [],
     innerItems = true,
     direction = "column",
-    isActive = true,
+    isactive = 1,
     expanded = !false,
-    showButton = true,
+    showbutton = 1,
     width,
     redirect = "",
   }: any = props;
   const [{ token, loading: globalLoading }, dispatch]: any = useStateValue();
   const [expand, switchExpand] = useToggle(
-    showButton ? expanded : true,
+    showbutton ? expanded : 1,
     !expanded
   );
   const indexesList: any = [];
   items.map((name: any, index: number) => {
-    const href = redirect ? `/${redirect}#${labelCases(name).LS}` : `#${labelCases(name).LS}`;
+    const href = redirect
+      ? `/${redirect}#${labelCases(name).LS}`
+      : `#${labelCases(name).LS}`;
     const active = refs.includes(labelCases(name).LS);
     indexesList.push(
       <NextLink
@@ -57,10 +59,10 @@ export function TrackSidebar(props: any) {
       {...{
         ...props,
         style: { flexDirection: direction, width: width || "available" },
-        className: styles.body.concat(" ", isActive && styles.active),
+        className: styles.body.concat(" ", isactive && styles.active),
       }}
     >
-      {innerItems && showButton && (
+      {innerItems && showbutton && (
         <i
           key="0"
           className={`fa-solid ${

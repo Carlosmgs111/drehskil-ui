@@ -25,14 +25,14 @@ export function PanelSidebar(props: any) {
     children = [],
     items = [],
     expanded = true,
-    isActive = true,
+    isactive = 1,
     width,
   } = props;
 
   return (
     <div
       style={{ width: width || "available" }}
-      className={`${styles.body} ${isActive ? styles.active : ""}`}
+      className={`${styles.body} ${isactive ? styles.active : ""}`}
     >
       {items.map(
         (

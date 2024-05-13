@@ -43,7 +43,7 @@ export default function Components({ children, componentId = "" }: any) {
           sidebars={[
             <TrackSidebar
               redirect={"components"}
-              showButton={false}
+              showbutton={0}
               id={"tracksidebar"}
               key={0}
             />,

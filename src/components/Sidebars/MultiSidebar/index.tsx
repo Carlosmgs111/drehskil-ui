@@ -52,7 +52,6 @@ export const MultiSidebar = (props: any) => {
                     key={index}
                     onClick={() => setActiveSidebars([sidebar.props.id])}
                   >
-                    {/* {index + 1} */}
                   </i>
                 ))}
                 {activeSidebars.length !== sidebars.length && multi && (
@@ -75,7 +74,7 @@ export const MultiSidebar = (props: any) => {
             >
               {sidebars.map((sidebar: any, index: number) =>
                 injectAttrsToReactElements([sidebar], {
-                  isActive: activeSidebars.includes(sidebar.props.id),
+                  isactive: Number(activeSidebars.includes(sidebar.props.id)),
                   key: index,
                   width: width
                     ? `${Number(

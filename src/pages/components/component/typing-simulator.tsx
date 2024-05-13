@@ -1,4 +1,4 @@
-import ComponentsPage from "./index";
+import ComponentsPage from "../index";
 import { ComponentPage } from "@/containers/ComponentPage";
 import { Typing } from "@/components/Typing";
 

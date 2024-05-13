@@ -1,4 +1,4 @@
-import ComponentsPage from "./index";
+import ComponentsPage from "../index";
 import { ComponentPage } from "@/containers/ComponentPage";
 import { Modal } from "@components/Modal";
 import { useState } from "react";

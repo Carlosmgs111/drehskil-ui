@@ -1,4 +1,4 @@
-import ComponentsPage from "./index";
+import ComponentsPage from "../index";
 import { ComponentPage } from "@/containers/ComponentPage";
 import { useTrackSidebar } from "@/hooks/useTrackSidebar";
 import { NextjsSVG, AxiosSVG, ReactSVG, TypeScriptSVG, HTMLSVG, CSSSVG } from "@/icons";
@@ -42,7 +42,7 @@ export default function TrackSidebar() {
       <div
         style={{
           width: "calc(100% - 4rem - 0.8rem)",
-          height: "30rem",
+          height: "fit-content",
           display: "flex",
           flexDirection: "column",
           gap: "2rem",
@@ -66,7 +66,7 @@ export default function TrackSidebar() {
         <div
           style={{
             width: "100%",
-            height: "40rem",
+            height: "44rem",
             display: "flex",
             overflowY: "scroll",
             scrollBehavior: "smooth",

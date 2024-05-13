@@ -1,6 +1,6 @@
-import ComponentsPage from "./index";
+import ComponentsPage from "../index";
 import { ComponentPage } from "@/containers/ComponentPage";
-import { Slider } from "../../components/Slider";
+import { Slider } from "../../../components/Slider";
 import {
   JestSVG,
   ReactSVG,

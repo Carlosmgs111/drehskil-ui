@@ -64,14 +64,14 @@ export function TrackSidebar(props: any) {
     >
       {innerItems && Boolean(showbutton) && (
         <div className={styles.header}>
-        <i
-          key="0"
-          className={`fa-solid 
-          ${expand ? "fa-xmark" : "fa-bars"}
-          ${styles.item}`}
-          onClick={switchExpand}
-        />
-      </div>
+          <i
+            key="0"
+            className={`fa-solid 
+            ${expand ? "fa-xmark" : "fa-bars"}
+            ${styles.item}`}
+            onClick={switchExpand}
+          />
+        </div>
       )}
       {indexesList}
     </section>

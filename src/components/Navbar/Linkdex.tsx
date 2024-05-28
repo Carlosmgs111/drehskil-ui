@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 
 export const Linkdex = ({
   label,
-  linkRef,
+  linkRef = { current: null },
   children,
   to,
   className = "",

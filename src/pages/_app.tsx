@@ -32,6 +32,7 @@ const Wrapper = ({ children }: any) => {
     components: "Components",
     "api-doc": "Api Documentation",
     about: "About",
+    laboratory: "Lab"
   };
 
   return (

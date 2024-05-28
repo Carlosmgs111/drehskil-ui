@@ -29,9 +29,9 @@
   },
   "loader": {
     "title": "Loader",
-    "summary": "Simula la escritura de las diferentes palabras que se le provea, ademas de otorgarle estilos a las mismas y controlar la velocidad de escritura.",
+    "summary": "Un simple componente para mostrar un estado de carga, se puede incluir en botones u otros componentes que requieran mostrar un estado de carga.",
     "version": "0.0.1",
     "reference": "/components/component/loader",
-    "video_demo_url": "https://github.com/Carlosmgs111/assets-public/assets/41123597/970d1d4c-f974-4ca6-8397-4cfa9762fc0d"
+    "video_demo_url": "https://github.com/Carlosmgs111/assets-public/assets/41123597/13d45e61-7f71-4758-b8b8-a258f4d4cb85"
   }
 }

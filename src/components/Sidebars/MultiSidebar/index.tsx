@@ -51,8 +51,7 @@ export const MultiSidebar = (props: any) => {
                     } ${styles.button}`}
                     key={index}
                     onClick={() => setActiveSidebars([sidebar.props.id])}
-                  >
-                  </i>
+                  ></i>
                 ))}
                 {activeSidebars.length !== sidebars.length && multi && (
                   <i
@@ -78,7 +77,7 @@ export const MultiSidebar = (props: any) => {
                   key: index,
                   width: width
                     ? `${Number(
-                        width.replace("px", "") / activeSidebars.length
+                        width.replace("px", "") / activeSidebars.length // ? Here doesn't require to substract the padding
                       )}px`
                     : "none",
                 })

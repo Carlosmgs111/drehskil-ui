@@ -12,7 +12,7 @@
 .navbar_section {
   top: 0;
   right: 0;
-  width: 100rem;
+  width: 120rem;
   height: 6rem;
   justify-content: space-between;
   align-items: center;
@@ -40,7 +40,7 @@
 
 .logo_container:hover .logo_text {
   opacity: 1;
-  transform: translate(calc(4rem + 2rem + 0.2rem), 0); /* ? calc( width of logo + right lateral padding of logo + space ) */
+  transform: translate(calc(4rem + 2rem + 0.2rem), 0); /* ? calc( [width of logo] + [right lateral padding of logo] + [space] ) */
 }
 
 .navbar_section::-webkit-scrollbar {

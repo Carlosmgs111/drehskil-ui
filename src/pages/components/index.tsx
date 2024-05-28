@@ -43,17 +43,17 @@ export default function Components({ children, componentId = "" }: any) {
           sidebars={[
             <TrackSidebar
               redirect={"components"}
-              showbutton={0}
+              // showbutton={0}
               id={"tracksidebar"}
               key={0}
             />,
-            <PanelSidebar
-              id={"panelsidebar"}
-              key={1}
-              {...{
-                items: panelSidebarItems,
-              }}
-            />,
+             <PanelSidebar
+               id={"panelsidebar"}
+               key={1}
+               {...{
+                 items: panelSidebarItems,
+               }}
+             />,
           ]}
         >
           <div className={styles.content}>

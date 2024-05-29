@@ -8,8 +8,25 @@ export const ComponentPresentation = ({
   video_demo_url,
   reference,
 }: any) => {
-  const videoRef = useRef(null);
-  useEffect(() => {}, []);
+  const videoRef: any = useRef(null);
+
+  const videoStateManage = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.addEventListener("error", (event: any) => {
+      console.error("Error al cargar el video:", event);
+    });
+    video.addEventListener("pause", () => {
+      if (!video.ended) {
+        video.play();
+      }
+    });
+  };
+
+  useEffect(() => {
+    videoStateManage();
+  }, [videoRef]);
+
   return (
     <div className={styles.container}>
       {video_demo_url ? (

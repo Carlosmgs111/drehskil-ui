@@ -1,24 +1,22 @@
 .page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  flex-wrap: wrap;
   min-height: 100vh;
+  font-size: 1.8rem;
 }
-
-.page > main {
-  width: 100%;
-}
-
 .content {
-  padding: 16rem 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 4rem;
-  flex-direction: row;
-  align-items: flex-start;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 8rem 0;
   width: 100%;
+}
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  width: 80rem;
+}
+.section > span {
+  font-style: italic;
 }

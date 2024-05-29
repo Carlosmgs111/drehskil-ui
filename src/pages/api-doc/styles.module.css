@@ -1,3 +1,22 @@
 .page {
   min-height: 100vh;
+  font-size: 1.8rem;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 8rem 0;
+  width: 100%;
+}
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  width: 80rem;
+}
+.section > span {
+  font-style: italic;
 }

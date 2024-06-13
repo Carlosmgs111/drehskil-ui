@@ -5,7 +5,7 @@ import { useToggle } from "../../../hooks/useToggle";
 import { injectAttrsToReactElements } from "../../../utils";
 import { useStateValue } from "@context";
 import { useLocalStorage } from "@hooks/useLocalStorage";
-import { MemoizedComponent } from "@/components/MemoizedComponent";
+import { MemoizedComponent } from "@components/MemoizedComponent";
 
 export const MultiSidebar = (props: any) => {
   const {
@@ -14,6 +14,7 @@ export const MultiSidebar = (props: any) => {
     width,
     float: _float = true,
     multi = true,
+    settings = false,
   } = props;
   const [expand, switchExpand] = useToggle(false, true);
   const [activeSidebars, setActiveSidebars] = useState([sidebars[0]?.props.id]);
@@ -22,7 +23,7 @@ export const MultiSidebar = (props: any) => {
     "sidebarFloat",
     _float
   );
-  const [, dispatch]: any = useStateValue();
+  const [{ token }, dispatch]: any = useStateValue();
   const [float, switchFloat] = useToggle(sidebarFloat, !sidebarFloat);
 
   useEffect(() => {
@@ -56,7 +57,7 @@ export const MultiSidebar = (props: any) => {
                 {activeSidebars.length !== sidebars.length && multi && (
                   <i
                     key="expand-button"
-                    className={`${styles.item} fa-solid fa-ellipsis`}
+                    className={`${styles.item} fa-solid fa-ellipsis-vertical`}
                     onClick={() =>
                       setActiveSidebars([
                         ...sidebars.map((sidebar: any) => sidebar.props.id),
@@ -77,20 +78,23 @@ export const MultiSidebar = (props: any) => {
                   key: index,
                   width: width
                     ? `${Number(
-                        width.replace("px", "") / activeSidebars.length // ? Here doesn't require to substract the padding
+                        width.replace("px", "") / activeSidebars.length // ? Here requires to explicit declare to substract the padding
                       )}px`
                     : "none",
                 })
               )}
             </section>
             <section className={styles.footer}>
-              <i
-                key="settings-button"
-                className={`fa-solid fa-gear ${styles.rotable} ${styles.item} ${
-                  settingsDashboard ? styles.active : ""
-                }`}
-                onClick={switchSettingsDashboard}
-              ></i>
+              {settings ||
+                (token && (
+                  <i
+                    key="settings-button"
+                    className={`fa-solid fa-gear ${styles.rotable} ${
+                      styles.item
+                    } ${settingsDashboard ? styles.active : ""}`}
+                    onClick={switchSettingsDashboard}
+                  ></i>
+                ))}
             </section>
           </section>
           <SettingsDashboard

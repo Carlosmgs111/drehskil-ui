@@ -3,6 +3,7 @@ import { useToggle } from "../../../hooks/useToggle";
 import { useStateValue } from "@context";
 import styles from "./styles.module.css";
 import NextLink from "next/link";
+import { useEffect } from "react";
 
 export function TrackSidebar(props: any) {
   const {
@@ -21,6 +22,7 @@ export function TrackSidebar(props: any) {
     showbutton ? expanded : 1,
     !expanded
   );
+  
   const indexesList: any = [];
   items.map((name: any, index: number) => {
     const href = redirect

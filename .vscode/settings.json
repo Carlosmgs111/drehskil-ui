@@ -30,7 +30,9 @@
       "tab.activeBorder": "#00ffc8",
       "tab.activeForeground": "#04c39d",
       "tab.hoverBackground": "#404040"
-    }
+    },
+    "statusBar.background": "#1ce1ce",
+    "statusBar.foreground": "#15202b"
   },
   "peacock.color": "#1ce1ce"
 }
